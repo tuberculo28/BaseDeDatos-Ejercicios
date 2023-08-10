@@ -1,0 +1,7 @@
+SELECT name, Milliseconds FROM tracks 
+WHERE AlbumId = (SELECT Title,AlbumId from albums a JOIN artists art
+on a.ArtistId = art.ArtistId
+WHERE art.name like 'Deep Purple')
+
+--Mostrar el nombre y duración de las canciones de los discos de "Deep Purple"
+
