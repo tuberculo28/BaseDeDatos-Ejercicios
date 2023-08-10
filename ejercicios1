@@ -1,0 +1,7 @@
+SELECT name, Milliseconds from tracks
+WHERE AlbumId = (SELECT AlbumId from albums
+WHERE Title like 'Outbreak')
+
+--Mostrar el nombre y duración de las canciones del disco "Outbreak"
+
+
