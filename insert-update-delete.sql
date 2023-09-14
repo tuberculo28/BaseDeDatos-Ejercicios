@@ -42,3 +42,5 @@ DELETE FROM user WHERE username like "%kubo%";
 
 --Borrar un usuario que tenga posts, haciendo primero un DELETE con
 --subquery que borre todos los post de ese usuario.
+
+
