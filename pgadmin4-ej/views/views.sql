@@ -83,3 +83,11 @@ SELECT avg(f.rental_rate) as promedioxpeli, c.name from film f
 JOIN film_category fc on f.film_id = fc.film_id
 JOIN category c ON fc.category_id = c.category_id
 group by c.name
+
+--Mostrar el título, la fecha mínima y 
+--máxima de devolución de todas las películas.
+CREATE VIEW minmaxdevolucionxpeli AS
+SELECT f.title, min(r.return_date) as minima, max(r.return_date) FROM film f
+JOIN inventory i ON f.film_id = i.inventory_id
+JOIN rental r ON i.inventory_id = r.inventory_id
+GROUP BY f.title
